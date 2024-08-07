@@ -23,10 +23,10 @@ Once the setup is complete and free of errors, open your browser and navigate to
 
 ## Initial Load
 
-<img src="https://github.com/earlhansg/who-is-app/blob/main/client/src/assets/initial-reload.png" style=" width:1000px ; height:400px ">
+<img src="https://github.com/earlhansg/who-is-app/blob/main/client/src/assets/initial-reload.png" style=" width:1100px ; height:400px ">
 
 
 ## Additional Info
 
-- The initial domain name is "amazon.com," and the type is "Domain Information."
+- The initial domain name is "amazon.com" and the type is "Domain Information."
 - The search feature will automatically activate when you either click the search icon in the input field, press Enter in the input field, or click the dropdown menu.
