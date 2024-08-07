@@ -1,3 +1,4 @@
+// component
 import Container from "@components/container/Container"
 
 function App() {

@@ -7,6 +7,7 @@ import DataTable from "@components/data-table/DataTable";
 import { fetchDomain } from "src/api/domainApi";
 // material ui
 import Divider from "@mui/material/Divider";
+// models
 import { ContactInformation } from "@models/contact-information.model";
 import { DomainInformation } from "@models/domain-information.model";
 

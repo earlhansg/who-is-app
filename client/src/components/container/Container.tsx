@@ -1,3 +1,4 @@
+// component
 import Card from "@components/card/Card"
 
 const Container = () => {
