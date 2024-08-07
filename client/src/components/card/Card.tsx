@@ -1,25 +1,21 @@
 // hook
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // components
 import Filter from "@components/filter/Filter";
 import DataTable from "@components/data-table/DataTable";
+// api
+import { fetchDomain } from "src/api/domainApi";
 // material ui
 import Divider from "@mui/material/Divider";
-
-const mockData = {
-  domainName: "example.com",
-  registrarName: "Example Registrar",
-  registrationDate: "2020-01-01",
-  expirationDate: "2025-01-01",
-  estimatedDomainAge: 4,
-  hostnames: "www.example.com, mail.example.com",
-};
+import { ContactInformation } from "@models/contact-information.model";
+import { DomainInformation } from "@models/domain-information.model";
 
 const Card = () => {
   // states
-  const [searchKey, setSearchKey] = useState("");
+  const [searchKey, setSearchKey] = useState("amazon.com");
   const [informationType, setInformationTypes] = useState("domain");
   const [refetch, setRefetch] = useState(false);
+  const [data, setData] = useState<ContactInformation | DomainInformation | null>(null)
 
   const updateInformationType = (type: string) => {
     if(informationType !== type) {
@@ -27,6 +23,19 @@ const Card = () => {
     }
     setInformationTypes(type);
   };
+
+  const refetchDomain = async () => {
+    try {
+      const dataFiltered = await fetchDomain({domainName: searchKey, type: informationType});
+      setData(dataFiltered);
+    } catch {
+      setData(null);
+    }
+  }
+
+  useEffect(() => {
+    refetchDomain();
+  }, [refetch])
 
   return (
     <div
@@ -42,11 +51,12 @@ const Card = () => {
           handleChangeType={(type) => updateInformationType(type)}
           handleChangeKey={(key) => setSearchKey(key)}
           triggerRefetch={() => setRefetch(!refetch)}
+          defaultKey={searchKey}
         />
         <DataTable
           informationType={informationType}
-          searchKey={searchKey}
-          data={mockData}
+          data={data}
+          refetch={refetch}
         />
       </section>
     </div>

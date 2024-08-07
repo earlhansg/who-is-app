@@ -12,6 +12,7 @@ type FilterProps = {
   handleChangeType: (type: string) => void;
   handleChangeKey: (type: string) => void;
   triggerRefetch: () => void;
+  defaultKey: string;
 };
 
 const informationTypes = [
@@ -29,6 +30,7 @@ const Filter = ({
   handleChangeType,
   handleChangeKey,
   triggerRefetch,
+  defaultKey
 }: FilterProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (event.key === "Enter") {
@@ -59,6 +61,7 @@ const Filter = ({
             </InputAdornment>
           }
           size="small"
+          defaultValue={defaultKey}
           onChange={(e) => handleChangeKey(e.target.value)}
           onKeyDown={handleKeyDown}
         />
