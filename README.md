@@ -28,5 +28,5 @@ Once the setup is complete and free of errors, open your browser and navigate to
 
 ## Additional Info
 
-- The initial domain name is "amazon.com" and the type is "Domain Information."
+- The initial domain name is "amazon.com" and the type is "Domain Information"
 - The search feature will automatically activate when you either click the search icon in the input field, press Enter in the input field, or click the dropdown menu.
