@@ -34,6 +34,7 @@ const Card = () => {
   }
 
   useEffect(() => {
+    // if filter triggers this will run 
     refetchDomain();
   }, [refetch])
 

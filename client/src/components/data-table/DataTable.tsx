@@ -55,10 +55,12 @@ const DataTable = ({ informationType, data, refetch }: DataTableProps) => {
     return () => clearTimeout(timeoutId);
   }, [refetch]);
 
+  // this approach dynamically renders headers, accommodating various interfaces.
   const initializeTableHeader = () => {
     return informationType === "domain" ? domainHeader : contactHeader;
   };
 
+  // this approach dynamically renders body data, accommodating various interfaces.
   const initializeTableBody = () => {
     if (data && 'domainName' in data) {
       return (

@@ -13,6 +13,7 @@ export async function fetchDomain(
     return res.status(400).json({ error: "Domain name and type are required" });
   }
   try {
+    // first, get data from `req.body` in the POST request, then use that data as parameters in the GET request.
     const response = await axios.get(
       `https://www.whoisxmlapi.com/whoisserver/WhoisService`,
       {
@@ -25,7 +26,7 @@ export async function fetchDomain(
     );
 
     const whoisData = response.data.WhoisRecord;
-
+    // condition for how we want our data to be returned.
     if (type === "domain") {
       const domainInfo = {
         domainName: whoisData.domainName,

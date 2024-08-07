@@ -32,6 +32,7 @@ const Filter = ({
   triggerRefetch,
   defaultKey
 }: FilterProps) => {
+  // trigger when the user presses Enter in the input field.
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (event.key === "Enter") {
       triggerRefetch();
