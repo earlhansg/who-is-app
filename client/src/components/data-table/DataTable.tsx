@@ -39,6 +39,7 @@ const contactHeader = [
 ];
 
 const DataTable = ({ informationType, data, refetch }: DataTableProps) => {
+  // state 
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
