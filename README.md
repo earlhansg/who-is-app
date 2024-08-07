@@ -2,6 +2,10 @@
 
 The web application checks a variety of domain ownership and registration data points from a comprehensive WHOIS database and includes a hybrid filtering feature.
 
+## Requirements
+- Node.js (version 14 or above recommended)
+- Install TypeScript using the following command: `npm install -g typescript`
+
 ## Installation
 1. Clone the repository: `git clone https://github.com/earlhansg/who-is-app.git`
 2. Navigate to the client directory: `cd client`
