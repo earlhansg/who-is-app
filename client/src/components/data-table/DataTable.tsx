@@ -109,7 +109,6 @@ const DataTable = ({ informationType, data, refetch }: DataTableProps) => {
               </TableRow>
             </TableHead>
           </Table>
-          {/* <NoData/> */}
           {!data && !isLoading && <NoData />}
         </TableContainer>
       )}
