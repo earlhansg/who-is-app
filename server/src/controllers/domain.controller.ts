@@ -1,5 +1,8 @@
+// lib
 import { Request, Response } from "express";
 import axios from "axios";
+// util
+import { formatHostnames } from "../utility/format-hostnames";
 
 export async function fetchDomain(
   req: Request,
@@ -14,7 +17,7 @@ export async function fetchDomain(
       `https://www.whoisxmlapi.com/whoisserver/WhoisService`,
       {
         params: {
-        //   apiKey: WHOIS_API_KEY,
+          apiKey: process.env.API_KEY,
           domainName,
           outputFormat: "JSON",
         },
@@ -30,7 +33,8 @@ export async function fetchDomain(
         registrationDate: whoisData.createdDate,
         expirationDate: whoisData.expiresDate,
         estimatedDomainAge: whoisData.estimatedDomainAge,
-        hostnames: whoisData.nameServers?.hostNames?.join(", ") || "",
+        // hostnames: whoisData.nameServers?.hostNames?.join(", ") || "",
+        hostnames: formatHostnames(whoisData.nameServers?.hostNames?.join(", ") || "")
       };
       return res.json(domainInfo);
     } else if (type === "contact") {
