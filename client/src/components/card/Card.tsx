@@ -41,7 +41,7 @@ const Card = () => {
 
   return (
     <div
-      className="w-[1200px] rounded shadow-lg px-3 py-5 flex flex-col gap-5 mt-20"
+      className="xl:w-[1200px] lg:w-[800px] w-[700px] rounded shadow-lg px-3 py-5 flex flex-col gap-5 mt-20"
       style={{ alignSelf: "start" }}
     >
       <section className="flex flex-col gap-2">
