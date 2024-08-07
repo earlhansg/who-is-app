@@ -33,7 +33,6 @@ export async function fetchDomain(
         registrationDate: whoisData.createdDate,
         expirationDate: whoisData.expiresDate,
         estimatedDomainAge: whoisData.estimatedDomainAge,
-        // hostnames: whoisData.nameServers?.hostNames?.join(", ") || "",
         hostnames: formatHostnames(whoisData.nameServers?.hostNames?.join(", ") || "")
       };
       return res.json(domainInfo);
