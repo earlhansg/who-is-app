@@ -23,4 +23,4 @@ Once the setup is complete and free of errors, open your browser and navigate to
 
 ## Initial Load
 
-<img src="https://github.com/earlhansg/to-do-list/blob/main/src/assets/sreenshots/1.png" style=" width:700px ; height:370px ">
+<img src="https://github.com/earlhansg/who-is-app/blob/main/client/src/assets/screenshot.png" style=" width:700px ; height:370px ">
